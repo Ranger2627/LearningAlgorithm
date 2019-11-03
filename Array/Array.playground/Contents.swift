@@ -153,5 +153,5 @@ a.removeFirst()
 print(String(describing: a))
 
 let removeNumber1 = a.remove(element: number1)
- 
+print(removeNumber1)
 
