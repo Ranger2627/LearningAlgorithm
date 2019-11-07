@@ -10,6 +10,16 @@ protocol Stack {
     func top() -> ItemType
 }
 
+protocol Queue {
+    associatedtype ItemType
+    
+    func getSize() -> Int
+    func isEmpty() -> Bool
+    func enqueue(element: ItemType)
+    func dequeue( ) -> ItemType
+    func getFront() -> ItemType
+}
+
 class ArrayStack<T>: CustomStringConvertible, Stack {
     private var array: NewArray<T>
     
@@ -51,6 +61,46 @@ class ArrayStack<T>: CustomStringConvertible, Stack {
     }
 }
 
+class ArrayQueue<T>: CustomStringConvertible, Queue {
+    private var array: NewArray<T>
+    
+    var description: String {
+        var des = "front ["
+        for i in 0 ..< array.getSize() {
+            des += "\(array.get(index: i))"
+            if i != (array.getSize() - 1) {
+                des += ", "
+            }
+        }
+        des += "] tail"
+        return des
+    }
+    
+    init() {
+        array = NewArray.init()
+    }
+    
+    //MARK: - Stack
+    func getSize() -> Int {
+        return array.getSize()
+    }
+    
+    func isEmpty() -> Bool {
+        return array.isEmpty()
+    }
+    
+    func enqueue(element: T) {
+        array.addLast(element: element)
+    }
+    
+    func dequeue() -> T {
+        return array.removeLast()
+    }
+    
+    func getFront() -> T {
+        return array.getFirst()
+    }
+}
 
 class NewArray<T>: CustomStringConvertible {
     private var data: Array<T?>
@@ -82,7 +132,7 @@ class NewArray<T>: CustomStringConvertible {
     
     private func indexCheck(_ index: Int) {
         if index < 0 || index >= size {
-            fatalError("Index out of range")
+            fatalError("Index out of range2")
         }
     }
     
@@ -127,7 +177,7 @@ class NewArray<T>: CustomStringConvertible {
     
     func add(element: T, index: Int) {
         if index < 0 || index > size {
-            fatalError("Index out of range")
+            fatalError("Index out of range3")
         } else {
             if size == data.count {
                 resize(capacity: size * 2)
@@ -143,7 +193,7 @@ class NewArray<T>: CustomStringConvertible {
     //MARK: - 删除元素
     func remove(index: Int) -> T {
         indexCheck(index)
-        if size == (data.count / 4) && data.count > 1 {
+        if size == (data.count / 4) && data.count > 5 {
             resize(capacity: data.count / 2)
         }
         let element = data[index]!
@@ -233,4 +283,40 @@ arrayStack.push(element: 3)
 arrayStack.push(element: 4)
 print(arrayStack)
 arrayStack.pop()
+arrayStack.pop()
+arrayStack.pop()
+arrayStack.pop()
+arrayStack.push(element: 2)
 print(arrayStack)
+
+
+class Solution {
+    func isValid(_ s: String) -> Bool {
+        let stack = ArrayStack<Character>.init()
+        for c in s {
+            if c == "(" || c == "[" || c == "{" {
+                stack.push(element: c)
+            } else {
+                if stack.isEmpty() {
+                    return false
+                }
+                let lc = stack.pop()
+                if lc == "(" && c != ")" {
+                    return false
+                }
+                if lc == "[" && c != "]" {
+                    return false
+                }
+                if lc == "{" && c != "}" {
+                    return false
+                }
+            }
+            
+        }
+        
+        return stack.isEmpty()
+    }
+}
+
+let solution = Solution()
+print(solution.isValid("[()](())"))
