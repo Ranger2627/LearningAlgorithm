@@ -12,9 +12,18 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        test()
     }
-
+    
+    func test() {
+        let linkedList = LinkedList<Int>.init()
+        for i in 0..<5 {
+            linkedList.addFirst(element: i)
+            print(linkedList)
+        }
+        linkedList.add(index: 2, element: 666)
+        print(linkedList)
+    }
 
 }
 
