@@ -14,6 +14,7 @@
 		F908DC2923747D10009BBD36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F908DC2823747D10009BBD36 /* Assets.xcassets */; };
 		F908DC2C23747D10009BBD36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F908DC2A23747D10009BBD36 /* LaunchScreen.storyboard */; };
 		F908DC3423747D1A009BBD36 /* NewArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908DC3323747D1A009BBD36 /* NewArray.swift */; };
+		F911BC0B237B0CF3001C6468 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F911BC0A237B0CF3001C6468 /* LinkedList.swift */; };
 		F9DC384F2376C5E300FC5DFE /* Protocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DC384E2376C5E300FC5DFE /* Protocal.swift */; };
 		F9DC38512376C61800FC5DFE /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DC38502376C61800FC5DFE /* Stack.swift */; };
 		F9DC38532376C61D00FC5DFE /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DC38522376C61D00FC5DFE /* Queue.swift */; };
@@ -30,6 +31,7 @@
 		F908DC2B23747D10009BBD36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F908DC2D23747D10009BBD36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F908DC3323747D1A009BBD36 /* NewArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewArray.swift; sourceTree = "<group>"; };
+		F911BC0A237B0CF3001C6468 /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinkedList.swift; path = "../../../链表/LinkedList/LinkedList/LinkedList.swift"; sourceTree = "<group>"; };
 		F9DC384E2376C5E300FC5DFE /* Protocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocal.swift; sourceTree = "<group>"; };
 		F9DC38502376C61800FC5DFE /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		F9DC38522376C61D00FC5DFE /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				F9DC384E2376C5E300FC5DFE /* Protocal.swift */,
 				F9DC38502376C61800FC5DFE /* Stack.swift */,
 				F9DC38522376C61D00FC5DFE /* Queue.swift */,
+				F911BC0A237B0CF3001C6468 /* LinkedList.swift */,
 				F9DC38542376C67600FC5DFE /* LeetCode20.swift */,
 			);
 			path = ddd;
@@ -153,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F911BC0B237B0CF3001C6468 /* LinkedList.swift in Sources */,
 				F908DC2423747D0E009BBD36 /* ViewController.swift in Sources */,
 				F9DC38532376C61D00FC5DFE /* Queue.swift in Sources */,
 				F9DC38552376C67600FC5DFE /* LeetCode20.swift in Sources */,

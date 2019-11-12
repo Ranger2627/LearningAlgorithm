@@ -109,6 +109,31 @@ class LinkedList<T>: CustomStringConvertible {
         set(index: size - 1, element: element)
     }
     
+    //MARK: - 删除元素
+    func remove(index: Int) -> T? {
+        if index < 0 || index >= size {
+            fatalError("Index out of range in set LinkeList")
+        }
+        var pre = dummyHead
+        for _ in 0 ..< index {
+            pre = pre?.next
+        }
+        let deleteNode = pre?.next
+        pre?.next = deleteNode?.next
+        deleteNode?.next = nil
+        size -= 1
+        return deleteNode?.node
+    }
+    
+    func removeFirst() -> T? {
+        return remove(index: 0)
+    }
+    
+    func removeLast() -> T? {
+        return remove(index: size - 1)
+    }
+    
+    
     //MARK: - 打印
     var description: String {
         var des = ""

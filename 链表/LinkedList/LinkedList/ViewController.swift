@@ -23,6 +23,12 @@ class ViewController: UIViewController {
         }
         linkedList.add(index: 2, element: 666)
         print(linkedList)
+        let _ = linkedList.remove(index: 2)
+        print(linkedList)
+        let _ = linkedList.removeLast()
+        print(linkedList)
+        let _ = linkedList.removeFirst()
+        print(linkedList)
     }
 
 }

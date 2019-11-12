@@ -52,3 +52,34 @@ class ArrayStack<T>: CustomStringConvertible, Stack {
         return array.getLast()
     }
 }
+
+class LinkedStack<T>: CustomStringConvertible, Stack {
+    private let list = LinkedList<T>()
+    
+    //MARK: - Stack
+     func getSize() -> Int {
+         return list.getSize()
+     }
+     
+     func isEmpty() -> Bool {
+         return list.isEmpty()
+     }
+     
+     func push(element: T) {
+         list.addFirst(element: element)
+     }
+     
+     func pop() -> T {
+         return list.removeFirst()!
+     }
+     
+     func top() -> T {
+         return list.getFirst()!
+     }
+    
+    var description: String {
+        var des = "Stack: top"
+        des += String.init(describing: list)
+        return des
+    }
+}
