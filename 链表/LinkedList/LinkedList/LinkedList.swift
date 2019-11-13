@@ -6,7 +6,7 @@
 //  Copyright © 2019 周一见. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class LinkedList<T>: CustomStringConvertible {
     //MARK: - 私有成员

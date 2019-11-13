@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         test()
+        var a = aa(from: Decoder.self)
     }
     
     func test() {

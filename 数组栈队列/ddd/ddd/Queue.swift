@@ -136,3 +136,85 @@ class LoopQueue<T>: CustomStringConvertible, Queue {
         array = newArray
     }
 }
+
+class LinkedQueue<T>: CustomStringConvertible, Queue {
+    //MARK: - 私有成员
+    private class Node: CustomStringConvertible {
+        var node: T?
+        var next: Node?
+        
+        init(element: T?, next: Node?) {
+            self.node = element
+            self.next = next
+        }
+        
+        convenience init(element: T?) {
+            self.init(element: element, next: nil)
+        }
+        
+        convenience init() {
+            self.init(element: nil, next: nil)
+        }
+        
+        var description: String {
+            return node.debugDescription
+        }
+    }
+    
+    private var head: Node?
+    private var tail: Node?
+    private var size = 0
+    
+    var description: String {
+        var des = "LinkedQueue: front"
+        var current = head
+        while current != nil {
+            des = des + String(describing: current!.node!) + "->"
+            current = current?.next
+        }
+        des += "nil tail"
+        return des
+    }
+    
+    //MARK: - Stack
+    func getSize() -> Int {
+        return size
+    }
+    
+    func isEmpty() -> Bool {
+        return size == 0
+    }
+    
+    func enqueue(element: T) {
+        if tail == nil {
+            tail = Node.init(element: element)
+            head = tail
+        } else {
+            tail?.next = Node.init(element: element)
+            tail = tail?.next
+        }
+        size += 1
+    }
+    
+    func dequeue() -> T {
+        if isEmpty() {
+            fatalError("LimkedQueue is empty")
+        }
+        let removeNode = head?.node
+        head = head?.next
+        if head == nil {
+            tail = nil
+        }
+        size -= 1
+        return removeNode!
+    }
+    
+    func getFront() -> T {
+        if isEmpty() {
+            fatalError("LimkedQueue is empty")
+        }
+        return head!.node!
+    }
+}
+
+

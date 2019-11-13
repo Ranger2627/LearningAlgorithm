@@ -65,6 +65,9 @@ class ViewController: UIViewController {
 
         let loopQueue = LoopQueue<Int>()
         print(testQueueTime(queue: loopQueue, count: 100000))
+        
+        let linkedQueue = LinkedQueue<Int>()
+        print(testQueueTime(queue: linkedQueue, count: 100000))
     }
     
     func testQueueTime<T: Queue>(queue: T, count: Int) -> TimeInterval where T.ItemType == Int {
