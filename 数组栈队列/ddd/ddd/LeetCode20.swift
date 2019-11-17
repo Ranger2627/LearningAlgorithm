@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Solution {
+class Solution20 {
     func isValid(_ s: String) -> Bool {
         let stack = ArrayStack<Character>.init()
         for c in s {

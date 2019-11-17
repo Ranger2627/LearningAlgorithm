@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        test2()
+        testRemove()
     }
 
 
@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         arrayStack.push(element: 2)
         print(arrayStack)
 
-        let solution = Solution()
+        let solution = Solution20()
         print(solution.isValid("[()](())"))
     }
     
@@ -80,6 +80,17 @@ class ViewController: UIViewController {
         }
         let end = Date().timeIntervalSince1970
         return end - start
+    }
+    
+    //leetCode 203
+    func testRemove() {
+        let array = [1, 2, 6, 3, 4, 6]
+        let node = ListNode.init(array: array)
+        print(node)
+        
+        let solution =  Solution203()
+        solution.removeElements(node, 6)
+        print(node)
     }
 }
 
