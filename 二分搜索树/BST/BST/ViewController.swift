@@ -12,9 +12,17 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        forInBST()
     }
-
+    
+    func forInBST() {
+        let array = [5, 3, 6, 8, 4, 2]
+        let bst = BST<Int>.init()
+        for i in array {
+            bst.add(element: i)
+        }
+        bst.cengXuOrder()
+    }
 
 }
 

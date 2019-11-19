@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F9114F5F23843AA500728CA3 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9114F5B23843AA500728CA3 /* Stack.swift */; };
+		F9114F6023843AA500728CA3 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9114F5C23843AA500728CA3 /* Queue.swift */; };
+		F9114F6123843AA500728CA3 /* NewArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9114F5D23843AA500728CA3 /* NewArray.swift */; };
+		F9114F6223843AA500728CA3 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9114F5E23843AA500728CA3 /* LinkedList.swift */; };
+		F9114F6423843ACA00728CA3 /* Protocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9114F6323843ACA00728CA3 /* Protocal.swift */; };
 		F95227292381038000911D24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95227282381038000911D24 /* AppDelegate.swift */; };
 		F952272B2381038000911D24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952272A2381038000911D24 /* SceneDelegate.swift */; };
 		F952272D2381038000911D24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952272C2381038000911D24 /* ViewController.swift */; };
@@ -17,6 +22,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F9114F5B23843AA500728CA3 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		F9114F5C23843AA500728CA3 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		F9114F5D23843AA500728CA3 /* NewArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewArray.swift; sourceTree = "<group>"; };
+		F9114F5E23843AA500728CA3 /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
+		F9114F6323843ACA00728CA3 /* Protocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocal.swift; sourceTree = "<group>"; };
 		F95227252381038000911D24 /* BST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BST.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F95227282381038000911D24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F952272A2381038000911D24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +49,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F9114F5A23843AA500728CA3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				F9114F6323843ACA00728CA3 /* Protocal.swift */,
+				F9114F5B23843AA500728CA3 /* Stack.swift */,
+				F9114F5C23843AA500728CA3 /* Queue.swift */,
+				F9114F5D23843AA500728CA3 /* NewArray.swift */,
+				F9114F5E23843AA500728CA3 /* LinkedList.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		F952271C2381037F00911D24 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +80,7 @@
 		F95227272381038000911D24 /* BST */ = {
 			isa = PBXGroup;
 			children = (
+				F9114F5A23843AA500728CA3 /* Base */,
 				F95227282381038000911D24 /* AppDelegate.swift */,
 				F952272A2381038000911D24 /* SceneDelegate.swift */,
 				F952272C2381038000911D24 /* ViewController.swift */,
@@ -142,8 +165,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F952272D2381038000911D24 /* ViewController.swift in Sources */,
+				F9114F6023843AA500728CA3 /* Queue.swift in Sources */,
+				F9114F6123843AA500728CA3 /* NewArray.swift in Sources */,
+				F9114F5F23843AA500728CA3 /* Stack.swift in Sources */,
+				F9114F6423843ACA00728CA3 /* Protocal.swift in Sources */,
 				F952273D2381039D00911D24 /* BST.swift in Sources */,
 				F95227292381038000911D24 /* AppDelegate.swift in Sources */,
+				F9114F6223843AA500728CA3 /* LinkedList.swift in Sources */,
 				F952272B2381038000911D24 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
