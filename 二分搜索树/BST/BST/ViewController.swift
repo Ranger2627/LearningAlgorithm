@@ -16,12 +16,18 @@ class ViewController: UIViewController {
     }
     
     func forInBST() {
-        let array = [5, 3, 6, 8, 4, 2]
+        let array = [5, 3, 6, 8, 4, 2, 50, 10, 25, 69, 159, 258, 55]
         let bst = BST<Int>.init()
         for i in array {
             bst.add(element: i)
         }
-        bst.cengXuOrder()
+        print(bst)
+        let _ = bst.removeMax()
+        print(bst)
+        let _ = bst.removeMin()
+        print(bst)
+        bst.remove(element: 25)
+        print(bst)
     }
 
 }

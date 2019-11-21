@@ -167,4 +167,106 @@ class BST<T: Comparable>: CustomStringConvertible {
         print(node!.element)
     }
     
+    //MARK: - 寻找元素
+    func minimum() -> T? {
+        if size == 0 {
+            fatalError("BST is empty")
+        }
+        return minimum(node: root)?.element
+    }
+    
+    private func minimum(node: Node?) -> Node? {
+        if node?.left == nil {
+            return node
+        }
+        return minimum(node: node?.left)
+    }
+    
+    func maximum() -> T? {
+        if size == 0 {
+            fatalError("BST is empty")
+        }
+        return maximum(node: root)?.element
+    }
+    
+    private func maximum(node: Node?) -> Node? {
+        if node?.right == nil {
+            return node
+        }
+        return minimum(node: node?.right)
+    }
+    //MARK: - 删除元素
+    //删除最小值和最大值
+    func removeMin() -> T? {
+        let ret = minimum()
+        let _ = removeMin(node: root)?.element
+        return ret
+    }
+    
+    private func removeMin(node: Node?) -> Node? {
+        if node?.left == nil {
+            let node = node?.right
+            node?.right = nil
+            size -= 1
+            return node?.right
+        }
+        node?.left = removeMin(node: node?.left)
+        return node
+    }
+    
+    func removeMax() -> T? {
+        let ret = maximum()
+        let _ = removeMax(node: root)?.element
+        return ret
+    }
+    
+    private func removeMax(node: Node?) -> Node? {
+        if node?.right == nil {
+            let node = node?.left
+            node?.left = nil
+            size -= 1
+            return node?.left
+        }
+        node?.right = removeMax(node: node?.right)
+        return node
+    }
+    
+    func remove(element: T) {
+        root = remove(node: root, element: element)
+    }
+    
+    private func remove(node: Node?, element: T) -> Node? {
+        if node == nil {
+            return nil
+        }
+        if element < node!.element {
+            node?.left = remove(node: node?.left, element: element)
+            return node
+        }
+        if element > node!.element {
+            node?.right = remove(node: node?.right, element: element)
+            return node
+        }
+        if node?.left == nil {
+            let node = node?.right
+            node?.right = nil
+            size -= 1
+            return node?.right
+        }
+        if node?.right == nil {
+            let node = node?.left
+            node?.left = nil
+            size -= 1
+            return node?.left
+        }
+        let suss = minimum(node: node?.right)
+        let min = removeMin(node: node?.right)
+        suss?.right = min
+        suss?.left = node?.left
+        node?.left = nil
+        node?.right = nil
+        return node
+    }
+    
+    
 }
