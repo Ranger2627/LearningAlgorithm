@@ -20,6 +20,14 @@ class MaxHeap<T: Comparable> {
         self.init(capacity: 10)
     }
     
+    convenience init(array: Array<T>) {
+        self.init(capacity: array.count)
+        for i in (0...parent(index: array.count - 1)).reversed() {
+            var k = i
+            siftDown(k: &k)
+        }
+    }
+    
     func getSize() -> Int {
         return array.count
     }
@@ -86,4 +94,11 @@ class MaxHeap<T: Comparable> {
         }
     }
     
+    func replace(element: T) -> T {
+        let max = findMax()
+        array[0] = element
+        var k = 0
+        siftDown(k: &k)
+        return max
+    }
 }

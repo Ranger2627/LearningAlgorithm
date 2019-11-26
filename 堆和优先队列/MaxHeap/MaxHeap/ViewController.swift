@@ -12,23 +12,33 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let max = 200000
-        let a = MaxHeap<Int>.init(capacity: max)
-        for _ in 0..<max {
-            a.add(element: Int(arc4random()))
-        }
-        var b: [Int] = Array.init(repeating: 0, count: max)
-        for i in 0..<max {
-            b[i] = a.extractMax()
-        }
-        for i in 0..<(max - 1) {
-            if b[i] < b[i + 1] {
-                fatalError("Error")
-            }
-        }
-        print("11")
+        print(testHeapTime())
+        print(testHeapTime2())
     }
 
+    func testHeapTime() -> TimeInterval {
+        let start = Date().timeIntervalSince1970
+        let max = 5000000
+        let heap = MaxHeap<Int>.init(capacity: max)
+        for _ in 0..<max {
+            heap.add(element: Int.random(in: 0...max))
+        }
+        let end = Date().timeIntervalSince1970
+        return end - start
+    }
+    
+    func testHeapTime2() -> TimeInterval {
+        let start = Date().timeIntervalSince1970
+        let max = 1000000
+        var arr = Array<Int>.init()
+        arr.reserveCapacity(max)
+        for _ in 0...max {
+            arr.append(Int.random(in: 0...max))
+        }
+        let _ = MaxHeap<Int>.init(array: arr)
+        let end = Date().timeIntervalSince1970
+        return end - start
+    }
 
 }
 
