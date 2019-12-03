@@ -103,7 +103,7 @@ class LikedListDic<K: Comparable, V>: MapP {
     
 }
 
-class BSTDic<K: Comparable, V>: MapP {
+class BSTDic<K: Comparable & Hashable, V>: MapP {
     typealias KeyType = K
     typealias ValueType = V
     
@@ -122,6 +122,7 @@ class BSTDic<K: Comparable, V>: MapP {
     
     private var root: Node?
     private var size = 0
+    private var allKey: Set<K> = []
     
     func getSize() -> Int {
         return size
@@ -131,8 +132,13 @@ class BSTDic<K: Comparable, V>: MapP {
         return size == 0
     }
     
+    func getAllKey() -> Set<K> {
+        return allKey
+    }
+    
     func add(key: K, value: V) {
-        let _ = add(node: root, key: key, value: value)
+        root = add(node: root, key: key, value: value)
+        allKey.insert(key)
     }
     
     //递归添加
@@ -188,6 +194,7 @@ class BSTDic<K: Comparable, V>: MapP {
         if node != nil {
             root = remove(node: root, key: key)
         }
+        allKey.remove(key)
         return node?.value
     }
     
