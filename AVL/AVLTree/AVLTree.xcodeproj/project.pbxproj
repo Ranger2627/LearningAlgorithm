@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F962D3DF239D49CB00BAA401 /* AVLMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F962D3DE239D49CB00BAA401 /* AVLMap.swift */; };
 		F9E592C5239B69D4000A4812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E592C4239B69D4000A4812 /* AppDelegate.swift */; };
 		F9E592C7239B69D4000A4812 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E592C6239B69D4000A4812 /* SceneDelegate.swift */; };
 		F9E592C9239B69D4000A4812 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E592C8239B69D4000A4812 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F962D3DE239D49CB00BAA401 /* AVLMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVLMap.swift; sourceTree = "<group>"; };
 		F9E592C1239B69D4000A4812 /* AVLTree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVLTree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9E592C4239B69D4000A4812 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9E592C6239B69D4000A4812 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				F9E592CF239B69D5000A4812 /* LaunchScreen.storyboard */,
 				F9E592D2239B69D5000A4812 /* Info.plist */,
 				F9E592D8239B6A88000A4812 /* AVLTree.swift */,
+				F962D3DE239D49CB00BAA401 /* AVLMap.swift */,
 			);
 			path = AVLTree;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9E592C9239B69D4000A4812 /* ViewController.swift in Sources */,
+				F962D3DF239D49CB00BAA401 /* AVLMap.swift in Sources */,
 				F9E592C5239B69D4000A4812 /* AppDelegate.swift in Sources */,
 				F9E592C7239B69D4000A4812 /* SceneDelegate.swift in Sources */,
 				F9E592D9239B6A88000A4812 /* AVLTree.swift in Sources */,

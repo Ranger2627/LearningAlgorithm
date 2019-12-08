@@ -8,13 +8,23 @@
 
 import Foundation
 
+protocol SetP {
+    associatedtype ItemType
+    
+    func getSize() -> Int
+    func isEmpty() -> Bool
+    func add(element: ItemType)
+    func remove(element: ItemType)
+    func contains(element: ItemType) -> Bool
+}
+
 protocol MapP {
     associatedtype KeyType: Comparable
     associatedtype ValueType
     
     func getSize() -> Int
     func isEmpty() -> Bool
-    func add(key: KeyType, value: ValueType)
+    func add(key: KeyType, value: ValueType?)
     func remove(key: KeyType) -> ValueType?
     func contains(key: KeyType) -> Bool
     func get(key: KeyType) -> ValueType?
@@ -93,7 +103,7 @@ class AVLDic<K: Comparable, V>: MapP {
         return node?.height ?? 0
     }
     
-    func add(key: K, value: V) {
+    func add(key: K, value: V?) {
         let _ = add(node: root, key: key, value: value)
     }
     
@@ -123,7 +133,7 @@ class AVLDic<K: Comparable, V>: MapP {
            return x
     }
     //递归添加
-    private func add(node: Node?, key: K, value: V) -> Node? {
+    private func add(node: Node?, key: K, value: V?) -> Node? {
         if node == nil {
             size += 1
             return Node.init(key: key, value: value)
@@ -182,17 +192,6 @@ class AVLDic<K: Comparable, V>: MapP {
         return minimum(node: node?.left)
     }
     
-    private func removeMin(node: Node?) -> Node? {
-        if node?.left == nil {
-            let node = node?.right
-            node?.right = nil
-            size -= 1
-            return node?.right
-        }
-        node?.left = removeMin(node: node?.left)
-        return node
-    }
-    
     func remove(key: K) -> V? {
         let node = getNode(node: root, key: key)
         if node != nil {
@@ -205,33 +204,51 @@ class AVLDic<K: Comparable, V>: MapP {
         if node == nil {
             return nil
         }
+        var retNode = node
         if key < node!.key {
             node?.left = remove(node: node?.left, key: key)
-            return node
-        }
-        if key > node!.key {
+            retNode = node
+        } else if key > node!.key {
             node?.right = remove(node: node?.right, key: key)
-            return node
-        }
-        if node?.left == nil {
+            retNode = node
+        } else if node?.left == nil {
             let node = node?.right
             node?.right = nil
             size -= 1
-            return node?.right
-        }
-        if node?.right == nil {
+            retNode = node?.right
+        } else if node?.right == nil {
             let node = node?.left
             node?.left = nil
             size -= 1
-            return node?.left
+            retNode = node?.left
+        } else {
+            let suss = minimum(node: retNode?.right)!
+            let min = remove(node: suss, key: suss.key)
+            suss.right = min
+            suss.left = retNode?.left
+            retNode?.left = nil
+            retNode?.right = nil
         }
-        let suss = minimum(node: node?.right)
-        let min = removeMin(node: node?.right)
-        suss?.right = min
-        suss?.left = node?.left
-        node?.left = nil
-        node?.right = nil
-        return node
+        
+        retNode?.height = 1 + max(getHeight(node: retNode?.left), getHeight(node: retNode?.right))
+        let balanceFator = getBalanceFator(node: retNode)
+        if balanceFator > 1  {
+            if getBalanceFator(node: retNode?.left) >= 0 {
+                return rightRotate(y: retNode)
+            } else {
+                retNode?.left = leftRotate(y: retNode?.left)
+                return rightRotate(y: retNode)
+            }
+        } else if balanceFator < -1 {
+            if getBalanceFator(node: retNode?.right) <= 0 {
+                return leftRotate(y: retNode)
+            } else {
+                retNode?.right = leftRotate(y: retNode?.right)
+                return leftRotate(y: retNode)
+            }
+        }
+       
+        return retNode
     }
     
     func contains(key: K) -> Bool {
