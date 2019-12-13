@@ -89,7 +89,17 @@ class RBTree<K: Comparable, V>: MapP {
         } else {
             node?.value = value
         }
-        return node
+        var finalNode = node!
+        if isRed(node: node?.right) && !isRed(node: node?.left) {
+            finalNode = leftRotate(node: node!)
+        }
+        if isRed(node: node?.left) && isRed(node: node?.left?.left) {
+            finalNode = rightRotate(node: finalNode)
+        }
+        if isRed(node: node?.left) && isRed(node: node?.right) {
+            flipColors(node: finalNode)
+        }
+        return finalNode
     }
     
     private func getNode(node: Node?, key: K) -> Node? {
