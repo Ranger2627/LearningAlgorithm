@@ -14,6 +14,13 @@
 		F93FB32923A4E339006AABE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F93FB32823A4E339006AABE0 /* Assets.xcassets */; };
 		F93FB32C23A4E339006AABE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F93FB32A23A4E339006AABE0 /* LaunchScreen.storyboard */; };
 		F93FB33423A4E366006AABE0 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FB33323A4E366006AABE0 /* Student.swift */; };
+		F9C974D523A5E756002480F1 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C974CF23A5E756002480F1 /* Stack.swift */; };
+		F9C974D623A5E756002480F1 /* Protocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C974D023A5E756002480F1 /* Protocal.swift */; };
+		F9C974D723A5E756002480F1 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C974D123A5E756002480F1 /* Queue.swift */; };
+		F9C974D823A5E756002480F1 /* NewArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C974D223A5E756002480F1 /* NewArray.swift */; };
+		F9C974D923A5E756002480F1 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C974D323A5E756002480F1 /* LinkedList.swift */; };
+		F9C974DA23A5E756002480F1 /* RBT.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C974D423A5E756002480F1 /* RBT.swift */; };
+		F9C974DC23A5E76D002480F1 /* HashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C974DB23A5E76D002480F1 /* HashTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +33,13 @@
 		F93FB32B23A4E339006AABE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F93FB32D23A4E339006AABE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F93FB33323A4E366006AABE0 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		F9C974CF23A5E756002480F1 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		F9C974D023A5E756002480F1 /* Protocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocal.swift; sourceTree = "<group>"; };
+		F9C974D123A5E756002480F1 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		F9C974D223A5E756002480F1 /* NewArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewArray.swift; sourceTree = "<group>"; };
+		F9C974D323A5E756002480F1 /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
+		F9C974D423A5E756002480F1 /* RBT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBT.swift; sourceTree = "<group>"; };
+		F9C974DB23A5E76D002480F1 /* HashTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +72,8 @@
 		F93FB31E23A4E338006AABE0 /* HashCode */ = {
 			isa = PBXGroup;
 			children = (
+				F9C974CE23A5E756002480F1 /* Base */,
+				F9C974D423A5E756002480F1 /* RBT.swift */,
 				F93FB31F23A4E338006AABE0 /* AppDelegate.swift */,
 				F93FB32123A4E338006AABE0 /* SceneDelegate.swift */,
 				F93FB32323A4E338006AABE0 /* ViewController.swift */,
@@ -66,8 +82,21 @@
 				F93FB32A23A4E339006AABE0 /* LaunchScreen.storyboard */,
 				F93FB32D23A4E339006AABE0 /* Info.plist */,
 				F93FB33323A4E366006AABE0 /* Student.swift */,
+				F9C974DB23A5E76D002480F1 /* HashTable.swift */,
 			);
 			path = HashCode;
+			sourceTree = "<group>";
+		};
+		F9C974CE23A5E756002480F1 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				F9C974CF23A5E756002480F1 /* Stack.swift */,
+				F9C974D023A5E756002480F1 /* Protocal.swift */,
+				F9C974D123A5E756002480F1 /* Queue.swift */,
+				F9C974D223A5E756002480F1 /* NewArray.swift */,
+				F9C974D323A5E756002480F1 /* LinkedList.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,7 +170,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9C974DA23A5E756002480F1 /* RBT.swift in Sources */,
+				F9C974D923A5E756002480F1 /* LinkedList.swift in Sources */,
 				F93FB32423A4E338006AABE0 /* ViewController.swift in Sources */,
+				F9C974D723A5E756002480F1 /* Queue.swift in Sources */,
+				F9C974D823A5E756002480F1 /* NewArray.swift in Sources */,
+				F9C974D623A5E756002480F1 /* Protocal.swift in Sources */,
+				F9C974D523A5E756002480F1 /* Stack.swift in Sources */,
+				F9C974DC23A5E76D002480F1 /* HashTable.swift in Sources */,
 				F93FB32023A4E338006AABE0 /* AppDelegate.swift in Sources */,
 				F93FB32223A4E338006AABE0 /* SceneDelegate.swift in Sources */,
 				F93FB33423A4E366006AABE0 /* Student.swift in Sources */,
